@@ -774,13 +774,13 @@ def main(args):
                 with torch.autocast("cuda"), torch.inference_mode():
                     for i in tqdm(range(args.n_save_sample), desc="Generating samples"):
                         current_prompt = args.save_sample_prompt						
-                        if (args.save_sample_prompt1 is not None) and (i==1):
+                        if (args.save_sample_prompt1 is not None) and (i==0):
                             current_prompt = args.save_sample_prompt1
-                        if (args.save_sample_prompt2 is not None) and (i==2):
+                        if (args.save_sample_prompt2 is not None) and (i==1):
                             current_prompt = args.save_sample_prompt2
-                        if (args.save_sample_prompt3 is not None) and (i==3):
+                        if (args.save_sample_prompt3 is not None) and (i==2):
                             current_prompt = args.save_sample_prompt3
-                        if (args.save_sample_prompt4 is not None) and (i==4):
+                        if (args.save_sample_prompt4 is not None) and (i==3):
                             current_prompt = args.save_sample_prompt4
                         images = pipeline(
                             current_prompt,
